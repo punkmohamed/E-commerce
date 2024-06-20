@@ -25,7 +25,11 @@ let db = getDatabase();
 const storage = getStorage();
 
 //firebase
-
+   //!Cart list Global variable                  
+   let allCartProduct;
+   let cartProduct
+  let cart;
+         
 //toglemenu
 function toggleMenu() {
   var menuContainer = document.querySelector('.menu-container');
@@ -309,6 +313,8 @@ if(sessionStorage.getItem('user-creds')!=null)
     {
         user=JSON.parse(sessionStorage.getItem('user-creds'))
         document.getElementById('acc').innerHTML=user.displayName
+        console.log('user.displayName',document.getElementById('acc1'))
+        console.log('user.displayName',JSON.parse(sessionStorage.getItem('user-creds')))
     }else{
         user=null
         window.location.href="../index.html"
@@ -316,6 +322,7 @@ if(sessionStorage.getItem('user-creds')!=null)
 
     let{displayName,uid}=user
     // console.log(displayName,uid)
+    document.getElementById('acc1').innerHTML=JSON.parse(sessionStorage.getItem('user-creds')).displayName
 
 
 
@@ -388,10 +395,6 @@ if(sessionStorage.getItem('user-creds')!=null)
 
         
             //!Cart list
-                    
-   let allCartProduct;
-   let cartProduct
-   let cart;
 
 
                function createCart(){

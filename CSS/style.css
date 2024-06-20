@@ -57,12 +57,15 @@ nav .nav-container {
   position: relative;
 }
 
-.navbar .links a{
+.navbar .links a, #acc1{
   text-decoration: none;
   color: #6d6868 !important;
   transition: 300ms all;
   font-weight: 400;
   font-size: 18px;
+}
+#acc1,#acc{
+  text-transform: capitalize;
 }
 .navbar .links a:hover{
   color: #333 !important ;
@@ -171,7 +174,7 @@ translate: org;
   padding: 20px 20px;
 }
 
-.menu-list a {
+.menu-list a, #acc1 {
   text-decoration: none;
   color: #333;
   font-size: 18px;
