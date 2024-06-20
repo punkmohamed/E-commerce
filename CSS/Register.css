@@ -10,7 +10,7 @@ a{
     color: inherit;
 }
 .form{
-    /* height: vh; */
+    min-height:60vh;
     padding: 38px 0;
 background: linear-gradient(to left, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0.9)),  url('../imgs/ground.png') no-repeat;
 background-position: center;
