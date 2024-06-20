@@ -1062,3 +1062,6 @@ align-items: center;
 .container{
   overflow: hidden;
 }
+.gallery{
+  overflow: hidden;
+}
