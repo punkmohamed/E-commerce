@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/all.min.css">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+
+<body>
+    <!-- header -->
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">Logo</div>
+                <div class="navbar">
+                    <ul class="links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="Categories.html">Category</a></li>
+                        <li><a href="Products.html">Product</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="account-cart">
+                    <a href=""><i class="fa-regular fa-user"> Account</i></a>
+                    <a href="wishlist.html" id="wish"><i class="fa-regular fa-heart"> Wish List
+                        <span id="wish-num"></span>
+                    </i></a>
+                    <a href="./cartList.html"   id="cart"><i class="fa-solid fa-cart-shopping"> Cart  <span id="cart-num"></span></i></a>
+                    <i onclick="logout()" class="logout-btn fa-solid fa-right-from-bracket"></i>
+
+                </div>
+                <button class="hamburger-button" onclick="toggleMenu()">
+                    &#9776;
+                </button>
+            </div>   
+        </nav>
+        <!-- Menu container to show/hide -->
+        <div class="menu-container">
+            <ul class="menu-list">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="Categories.html">Category</a></li>
+                <li><a href="Products.html">Product</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="">Cart</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- header -->
+    <div class="product-banner">
+        <h1>Our <span>Products</span></h1>
+    </div>
+    <div class="container">
+        <section class="product-cards" id="product-cards">
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Our Social</p>
+            <div class="social-icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fas fa-home"></i>
+                <i class="fab fa-linkedin"></i>
+            </div>
+            <p class="copyright">&copy; 2024 <span>Name</span> All Right Reserved</p>
+        </div>
+    </footer>
+    <script type="module" src="../JS/script.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+</body>
+
+</html>

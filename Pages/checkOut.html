@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/checkOut.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">Logo</div>
+                <div class="navbar">
+                    <ul class="links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="Categories.html">Category</a></li>
+                        <li><a href="Products.html">Product</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="account-cart">
+                    <a href=""><i class="fa-regular fa-user"> Account</i></a>
+                    <a href="wishlist.html" id="wish"><i class="fa-regular fa-heart"> Wish List
+                        <span id="wish-num"></span>
+                    </i></a>  
+                    <a href="./cartList.html"   id="cart"><i class="fa-solid fa-cart-shopping"> Cart  <span id="cart-num"></span></i></a>
+                    <i onclick="logout()" class="logout-btn fa-solid fa-right-from-bracket"></i>
+
+                </div>
+                <button class="hamburger-button" onclick="toggleMenu()">
+                    &#9776;
+                </button>
+
+            </div>
+
+        </nav>
+        <!-- Menu container to show/hide -->
+        <div class="menu-container">
+            <ul class="menu-list">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="Categories.html">Category</a></li>
+                <li><a href="Products.html">Product</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="">Cart</a></li>
+            </ul>
+        </div>
+    </header>
+   <div class="order-container">
+    <div id="checkOut">
+        <h2>Order Payment</h2>
+        <div>
+            <div class="order-list">
+                <table >
+                    <thead>
+                        <th>Oreder Items</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    <tbody id="order-item">
+                        <i class="fa-solid fa-spinner fa-spin" ></i>                   
+
+                    </tbody>
+            <tfoot>
+                <tr>
+                    <td class="price">
+                        Total Price
+                    </td>
+                    <td id="priceNum" colspan="2">
+                       <span id="priceNumIn"></span>$
+                    </td>
+                </tr>
+            </tfoot>
+                </table>
+                <div id="paypal-button-container"></div>
+
+            </div>
+        </div>
+
+    </div>
+   </div>
+   <footer class="footer">
+    <div class="container">
+        <p>Our Social</p>
+        <div class="social-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fas fa-home"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+        <p class="copyright">&copy; 2024 <span>Name</span> All Right Reserved</p>
+    </div>
+</footer>
+    <script type="module" src="../JS/checkOut.js"></script>
+    <script type="module" src="../JS/script.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AWskkL8mPTdzLoauLiX3MWfJnLv8lRlhgAUNkLKP4THGSoiKnkXgvOlzLjtfsfL0Q_xQh35t_i3rlIBQ"></script>
+
+</body>
+</html>

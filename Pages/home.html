@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/all.min.css">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <nav >
+            <div class="nav-container">
+                <div class="logo">Logo</div>
+                <div class="navbar">
+                    <ul class="links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="Categories.html">Category</a></li>
+                        <li><a href="Products.html">Product</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="account-cart">
+                    <a href=""><i class="fa-regular fa-user"> Account</i></a>
+                    <a href="wishlist.html" id="wish"><i class="fa-regular fa-heart"> Wish List
+                        <span id="wish-num"></span>
+                    </i></a>
+                    <a href="./cartList.html"   id="cart"><i class="fa-solid fa-cart-shopping"> Cart  <span id="cart-num"></span></i></a>
+                    <i onclick="logout()" class="logout-btn fa-solid fa-right-from-bracket"></i>
+                </div>
+                <button class="hamburger-button" onclick="toggleMenu()">
+                    &#9776;
+                </button>
+            </div>
+        
+        </nav>
+        <!-- Menu container to show/hide -->
+        <div class="menu-container">
+            <ul class="menu-list">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="Categories.html">Category</a></li>
+                <li><a href="Products.html">Product</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="">Cart</a></li>
+                <li onclick="logout()"><i  class="logout-btn fa-solid fa-right-from-bracket"></i></li>
+            </ul>
+        </div>
+    </header>
+    <!-- header -->
+    <!-- banner section -->
+
+    <section class="banner">
+        <div class="banner-info">
+            <h4>Trade-in-offer</h4>
+            <h2>Super value deals </h2>
+            <h1>On all products</h1>
+            <p>Lorem ipsum Dolorum?</p>
+            <button>Shop Now</button>
+        </div>
+        <div class="left">
+            <img src="/images/banner/b2.jpg" alt="Large Image">
+        </div>
+        <div class="right">
+            <div class="top">
+                <img src="/images/banner/b5.jpg" alt="Top Small Image">
+            </div>
+            <div class="bottom">
+                <img src="/images/banner/b7.jpg" alt="Bottom Small Image">
+            </div>
+        </div>
+    </section>
+    <!-- banner section
+
+
+    lastest product -->
+    <div class="container">
+        <section class="latest-product">
+            <div class="lastest-info">
+                <p class="section_category_p">ON SALE!</p>
+                <div id="demo"></div>
+                <a href="Products.html" class="more">More</a>
+            </div>
+            <div class="product-cards" id="product-cards">
+
+            </div>
+    </div>
+    </section>
+    </div>
+    <!-- //lastest product -->
+
+
+
+
+    <!-- SHOPNOW -->
+    <div class="container">
+        <section class="categories">
+            <h1>SHOP NOW</h1>
+            <!-- single category -->
+            <div class="category-container">
+                <div class="row">
+                    <img src="/images/products/f2.jpg" alt="" />
+                    <h3>Categoryname</h3>
+                </div>
+                <div class="row">
+                    <img src="/images/mobile.png" alt="" />
+                    <div>
+                        <a href="">
+                            <h3>Categoryname</h3>
+                        </a>
+                        <p>Horem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <button>Explore</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <img src="/images/products/f5.jpg" alt="" />
+                    <h3>Categoryname</h3>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- SHOPNOW -->
+    <!-- NEW ARRIVALS -->
+    <section class="section-new">
+        <div class="container">
+            <div>
+                <p class="section_category_p">New arrivals</p>
+            </div>
+            <div class="gallery">
+                <div class="gallery_item gallery_item_1">
+                    <img src="/images/gallery-1.png" alt="" class="gallery_item_img" />
+                    <div class="gallery_item_content">
+                        <div class="gallery_item_title">Playstation 5</div>
+                        <p class="gallery_item_p">
+                            Lorem ipsum dolor sit amet consectetur adipisicing.
+                        </p>
+                        <a href="#" class="gallery_item_link">SHOP NOW</a>
+                    </div>
+                </div>
+                <div class="gallery_item gallery_item_2">
+                    <img src="/images/gallery-2.png" alt="" class="gallery_item_img" />
+                    <div class="gallery_item_content">
+                        <div class="gallery_item_title">Playstation 5</div>
+                        <p class="gallery_item_p">
+                            Lorem ipsum dolor amet consectetur adipisicing.
+                        </p>
+                        <a href="#" class="gallery_item_link">SHOP NOW</a>
+                    </div>
+                </div>
+                <div class="gallery_item gallery_item_3">
+                    <img src="/images/gallery-3.png" alt="" class="gallery_item_img" />
+                    <div class="gallery_item_content">
+                        <div class="gallery_item_title">Playstation 5</div>
+                        <p class="gallery_item_p">
+                            Lorem ipsum dolor sit amet consectetur adipisicing.
+                        </p>
+                        <a href="#" class="gallery_item_link">SHOP NOW</a>
+                    </div>
+                </div>
+                <div class="gallery_item gallery_item_4">
+                    <img src="/images/gallery-4.png" alt="" class="gallery_item_img" />
+                    <div class="gallery_item_content">
+                        <div class="gallery_item_title">Playstation 5</div>
+                        <p class="gallery_item_p">
+                            Lorem ipsum dolor sit amet consectetur adipisicing.
+                        </p>
+                        <a href="#" class="gallery_item_link">SHOP NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><br><br><br>
+    <!-- NEW ARRIVALS -->
+
+
+
+
+
+
+    <div id="scrollToTopBtn" class="scroll-to-top-btn">
+        <span>&#8593;</span>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p>Our Social</p>
+            <div class="social-icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fas fa-home"></i>
+                <i class="fab fa-linkedin"></i>
+            </div>
+            <p class="copyright">&copy; 2024 <span>Name</span> All Right Reserved</p>
+        </div>
+    </footer>
+    <!-- <script  type="module"  src="../JS/wish.js"></script> -->
+    <script type="module" src="../JS/script.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
+</html>

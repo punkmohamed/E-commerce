@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/all.min.css">
+    <link rel="stylesheet" href="../CSS/Register.css" >
+    <link rel="stylesheet" href="../CSS/style.css" >
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">Logo</div>
+                <div class="account-cart">
+                  <a href="../index.html"><i class="fa-solid fa-door-open"> Login</i> </a>
+                    <a href="./register.html"><i class="fa-regular fa-user "> Resgiter</i> </a>
+                </div>
+                <button class="hamburger-button" onclick="toggleMenu()">
+                    &#9776;
+            </div>
+            </button>
+        </nav>
+        <!-- Menu container to show/hide -->
+        <div class="menu-container">
+            <ul class="menu-list">
+                <li><a href="../index.html">Login</a></li>
+                <li><a href="./register.html">Register</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="form">
+        <div id="loading" class="loading">
+            <i class="fas fa-spin fa-spinner fa-2xl"></i>  
+        </div>      
+        <form class="register" id="regForm">
+            <h2><i class="fa-solid fa-user fa-sm"></i>Sign Up</h2>
+            <div class="reg-Inp">
+                <label for="name"><i class="fa-solid fa-rectangle-ad"></i> Name</label>
+                <input onblur="clearValidatClass(this)" oninput="validateInput(this)" type="text"  class="inp" name="userName" id="name"  placeholder="Enter User Name">
+                <p class="inp-err">must contain at least 5 character</p>
+            </div>
+            <div class="reg-Inp">
+                <label for="email"><i class="fa-solid fa-envelope"></i> Email</label>
+                <input onblur="clearValidatClass(this)" oninput="validateInput(this)" type="text"  class="inp" name="email" id="email"  placeholder="Enter Your Email">
+                <p class="inp-err">enter valid email "example@gmail.com"</p>
+    
+            </div>
+
+            <div class="reg-Inp">
+                <label for="password"><i class="fa-solid fa-lock"></i> password</label>
+                <input onblur="clearValidatClass(this)" oninput="validateInput(this)" type="password"  class="inp" name="password" id="password"  placeholder="Enter  password">
+                <p class="inp-err">minimun password length 6</p>
+    
+            </div>
+            <div class="reg-Inp">
+                <label for="rePass"><i class="fa-solid fa-lock"></i> rePassword</label>
+                <input onblur="clearValidatClass(this)" oninput="validateInput(this)" type="password"  class="inp" name="rePass" id="rePass"  placeholder="Enter rePassword">
+                <p class="inp-err">password not matched</p>
+            </div>
+            <div id="err"></div>
+            <button type="submit" id="btn">Register</button>
+            <button type="button"  ><a href="../index.html">Login</a></button>
+        </form>
+    </div>
+    
+    <!-- ^Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Our Social</p>
+            <div class="social-icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fas fa-home"></i>
+                <i class="fab fa-linkedin"></i>
+            </div>
+            <p class="copyright">&copy; 2024 <span>Name</span> All Right Reserved</p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="module" src="../JS/rigster.js"></script>
+    <!-- <script  src="./firebase/reg.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,74 @@
+.wish-items{
+   margin-top: 50px;
+    min-height: 65vh;
+    padding: 10px;
+  
+}
+.wish-items .items {
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.593);
+    margin-block:10px ;
+    padding-inline: 10px;
+}
+.wish-items .items .logo{
+width:100px;
+display: block;
+height: 100px;
+}
+.wish-items .items img{
+    width: 100%;
+    height: 100%;
+}
+.wish-items .items h2{
+    margin: 5px;
+}
+
+.wish-items .items .rating{
+    display: flex;
+    gap: 80px;
+}
+
+.wish-items .item-box{
+display: flex;
+justify-content: space-between;
+align-content: center;
+width: 100%;
+}
+
+.wish-items  .item-btn{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: 100px;
+}
+.btn-delete{
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: 0;
+    transition: all 400ms;
+    border-radius: 20px;
+
+}
+
+.btn-delete:hover{
+    color: red;
+    background-color: white;
+    border: 1px solid red;
+}
+.price{
+    color: green;
+}
+.rate i{
+color: yellow;
+}
+
+.page-empty{
+    height: 60vh;
+    display:flex ;
+    align-items: center;
+    justify-content: center;
+}
