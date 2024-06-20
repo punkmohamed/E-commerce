@@ -334,7 +334,7 @@ if(sessionStorage.getItem('user-creds')!=null)
       let{count,products,totalPrice}=wishProduct
       // console.log('hahah',allWishProduct )
       // console.log('ddfdfdfdfsd',wishProduct )
-
+      getCartProducts( "Added to wish Successfully")
       let wishProducts=products!=['']?allWishProduct:[]
       let total=totalPrice?totalPrice:0;
        Object.keys(storedProducts).forEach((itemkey) => {
@@ -447,22 +447,26 @@ if(sessionStorage.getItem('user-creds')!=null)
                    
                   }
                   // console.log('ss',wish)
-                  getCartProducts()
+                  getCartProducts( "Product Added Successfully")
                   addNotify()
         
                 }
                 window.addToCart=addToCart
                 // addToWish()
-                function addNotify(){
+                function addNotify(message){
                  //Screen notify after Add
                  Toastify({
-                  text: "Product Added Successfully",
+                  text:message,
                   duration: 2000,
                   newWindow: true,
                   close: true,
                   gravity: "top", // `top` or `bottom`
                   position: "left", // `left`, `center` or `right`
-                  stopOnFocus: true, // Prevents dismissing of toast on hover
+                  stopOnFocus: true,
+                  offset: {
+                    // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                    y: 70 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                  }, // Prevents dismissing of toast on hover
                   style: {
                     background: "linear-gradient(to right, #00b09b, #96c93d)",
                   },

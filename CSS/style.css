@@ -1059,3 +1059,6 @@ align-items: center;
   }
 }
 /* galrey */
+.container{
+  overflow: hidden;
+}
