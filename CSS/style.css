@@ -1065,3 +1065,7 @@ align-items: center;
 .gallery{
   overflow: hidden;
 }
+#acc{
+  letter-spacing: 2px;
+  font-weight: 600;
+}

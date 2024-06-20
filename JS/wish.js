@@ -31,6 +31,8 @@ let user;
 if(sessionStorage.getItem('user-creds')!=null)
     {
         user=JSON.parse(sessionStorage.getItem('user-creds'))
+        document.getElementById('acc').innerHTML=user.displayName
+
     }else{
         user=null
         window.location.href="../index.html"
