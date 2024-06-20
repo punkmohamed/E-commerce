@@ -50,6 +50,7 @@ getWishList()
                 console.log('s',wishItem);
                 allWishItems=[...wishItem.products]
                 document.getElementById('wish-num').innerText=allWishItems.length-1
+                document.getElementById('wish-num-mob').innerText=allWishItems.length-1
             }
         })
      
@@ -90,6 +91,7 @@ if(sessionStorage.getItem('user-creds')!=null)
                 console.log('cardd',cartItem);
                 allItems=[...cartItem.products]
                 document.getElementById('cart-num').innerText=allItems.length
+                document.getElementById('cart-num-mob').innerText=allItems.length
             }
         })
         displaycart(allItems)
@@ -147,6 +149,7 @@ if(sessionStorage.getItem('user-creds')!=null)
  
 
         document.getElementById('cart-num').innerText=allItems.length-1
+        document.getElementById('cart-num-mob').innerText=allItems.length-1
 
       localStorage.setItem('total_order',tPrice)
   }
@@ -164,10 +167,12 @@ if(sessionStorage.getItem('user-creds')!=null)
     })
      displaycart(allItems)
      document.getElementById('cart-num').innerText=allItems.length-1
+     document.getElementById('cart-num-mob').innerText=allItems.length-1
 
 
   }
   window.deleteItem=deleteItem
+  
 
 
 
@@ -189,11 +194,14 @@ if(sessionStorage.getItem('user-creds')!=null)
     let dbref = ref(db);
      get(child(dbref, "/orderRequest")).then((snapshot) => {
       let order = snapshot.val();
-    //   console.log('orderRequest',order);
+      console.log('orderRequest',order);
       getOrderData(order)
     //   return wish;
     });
   }
+  
+  getOrderRequest()
+  
   function getOrderData(orderItems){
     Object.keys(orderItems).forEach((key) => {
         if(key==uid){
@@ -202,9 +210,6 @@ if(sessionStorage.getItem('user-creds')!=null)
             checkPaymentRequest(orderInfo)
         }
     })
-}
-window.onload=function name() {
-    getOrderRequest()
 }
 
 function checkPaymentRequest(orderInfo){
@@ -219,7 +224,8 @@ function checkPaymentRequest(orderInfo){
     }else{
  document.getElementById('cart-btn').innerHTML = ``
     }
-    // console.log(orderInfo)
+    console.log(orderInfo)
+    
     if(orderInfo.isAccepted)
         {
            document.getElementById('cart-btn').innerHTML = `  <div class="prices">

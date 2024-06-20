@@ -79,14 +79,14 @@ scrollImages();
 document.addEventListener('DOMContentLoaded', function () {
     var scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
-    window.addEventListener('scroll', function () {
+    try {
+      window.addEventListener('scroll', function () {
         if (window.pageYOffset > 100) {
             scrollToTopBtn.style.display = 'block';
         } else {
             scrollToTopBtn.style.display = 'none';
         }
     });
-    try {
       scrollToTopBtn.addEventListener('click', function () {
         window.scrollTo({
             top: 0,
@@ -287,6 +287,7 @@ let isfound=false
           allWishProduct=wishProduct.products;
           // console.log('aa',wishProduct.products )
           document.getElementById('wish-num').innerText=allWishProduct.length-1;
+          document.getElementById('wish-num-mob').innerText=allWishProduct.length-1;
           localStorage.setItem('wishNumber',allWishProduct.length-1)
           return
         }
@@ -498,6 +499,7 @@ if(sessionStorage.getItem('user-creds')!=null)
                   allCartProduct=cartProduct.products;
                   // console.log('aa',cartProduct.products )
                   document.getElementById('cart-num').innerText=allCartProduct.length-1;
+                  document.getElementById('cart-num-mob').innerText=allCartProduct.length-1;
                   localStorage.setItem('cartNumber',allCartProduct.length-1)
                   return
                 }

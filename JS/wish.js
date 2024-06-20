@@ -62,6 +62,7 @@ let allItems=[]
                 console.log('s',wishItem);
                 allItems=[...wishItem.products]
                 document.getElementById('wish-num').innerText=allItems.length-1
+                document.getElementById('wish-num-mob').innerText=allItems.length-1
             }
         })
         displayWish(allItems)
@@ -112,6 +113,7 @@ let allItems=[]
     })
      displayWish(allItems)
      document.getElementById('wish-num').innerText=allItems.length-1
+     document.getElementById('wish-num-mob').innerText=allItems.length-1
 
 
   }

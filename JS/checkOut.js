@@ -56,6 +56,7 @@ function getcartData(listItems){
             allCardProduct=[...cartItem.products]
             // console.log('allCardProduct',allCardProduct)
             document.getElementById('cart-num').innerText=allCardProduct.length-1
+            document.getElementById('cart-num-mob').innerText=allCardProduct.length-1
         }
     })
     displayChectProduct( allCardProduct)
@@ -103,6 +104,7 @@ function getWishData(listItems){
             //   console.log('s',wishItem);
               allWishItems=[...wishItem.products]
               document.getElementById('wish-num').innerText=allWishItems.length-1
+              document.getElementById('wish-num-mob').innerText=allWishItems.length-1
           }
       })
 
@@ -147,3 +149,9 @@ paypal.Buttons({
     window.location.href='../index.html'
   }
   window.logout = logout;
+  
+  function toggleMenu() {
+    var menuContainer = document.querySelector('.menu-container');
+    menuContainer.classList.toggle('open');
+  }
+  window.toggleMenu = toggleMenu;

@@ -130,6 +130,13 @@ translate: org;
   padding: 2px;
   color: white;
 }
+#wish-num-mob,#cart-num-mob{
+  background-color: #0fdd00;
+  margin-left: 4px;
+  padding: 4px 7px;
+  border-radius: 50%;
+  color: white;
+}
 
 /* Hamburger button styles */
 .hamburger-button {
