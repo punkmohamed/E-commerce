@@ -48,7 +48,7 @@ window.logout = logout;
 let landingpage = document.querySelector(".banner .left img");
 let imgsArray = [];
 for (let i = 1; i < 9; i++) {
-    imgsArray.push(`/images/banner/b${i}.jpg`);
+    imgsArray.push(`../images/banner/b${i}.jpg`);
 }
 
 let index = 0;
