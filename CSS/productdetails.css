@@ -149,6 +149,10 @@
     margin-top: 10px;
 }
  /*End Cart*/
+ #details-btn{
+    display: flex;
+    font-size: 15px;
+ }
 
  /*start into cart*/
 /*  .maincarts{

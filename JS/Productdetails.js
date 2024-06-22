@@ -40,6 +40,13 @@ if(sessionStorage.getItem('user-creds')!=null)
 
   let{displayName,uid}=user
 
+  //toglemenu
+function toggleMenu() {
+  var menuContainer = document.querySelector(".menu-container");
+  menuContainer.classList.toggle("open");
+}
+window.toggleMenu = toggleMenu;
+
 let productKey;
 if (sessionStorage.getItem("product") != null) {
   productKey = +sessionStorage.getItem("product");
@@ -75,8 +82,11 @@ function getProduct() {
                 <h2>Price : ${storedProduct.price} $</h2>
                 <p>We have many different payment methods</p>
                 <hr>
+                <div id="details-btn">
                 <button onclick="addToCart(${productKey})" type="button" class="btn cart" onclick="addToCart()">Add To Cart</button>
                 <button onclick="addToWish(${productKey})"  type="button" class="btn wish">Add To Wishlist</button>
+                </div>
+                
             </div>
         </div>
     </div>
