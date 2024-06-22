@@ -39,11 +39,10 @@ if(sessionStorage.getItem('user-creds')!=null)
   }
 
   let{displayName,uid}=user
-
+console.log('dispy',displayName)
+console.log('dispy',user)
  setTimeout(()=>{
-  document.getElementById("acc1").innerHTML = JSON.parse(
-    sessionStorage.getItem("user-creds")
-  ).displayName;
+  document.getElementById("acc1").innerText =displayName;
  },1000)
   //toglemenu
 function toggleMenu() {
