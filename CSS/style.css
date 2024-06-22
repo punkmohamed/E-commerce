@@ -57,7 +57,7 @@ nav .nav-container {
   position: relative;
 }
 
-.navbar .links a, #acc1{
+.navbar .links a{
   text-decoration: none;
   color: #6d6868 !important;
   transition: 300ms all;
@@ -1067,9 +1067,10 @@ align-items: center;
 .gallery{
   overflow: hidden;
 }
-#acc{
+#acc,#acc1{
   letter-spacing: 2px;
   font-weight: 600;
+  color: #1b1a1a;
 }
 
 
