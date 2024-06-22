@@ -14,7 +14,6 @@
         rel="stylesheet">
 </head>
 
-
 <body>
     <!-- header -->
     <header>
@@ -30,23 +29,24 @@
                     </ul>
                 </div>
                 <div class="account-cart">
-                    <a href=""><i class="fa-regular fa-user"> Account</i></a>
+                    <a><i class="fa-regular fa-user" id="acc"> Account</i></a>
                     <a href="wishlist.html" id="wish"><i class="fa-regular fa-heart"> Wish List
-                        <span id="wish-num"></span>
-                    </i></a>
-                    <a href="./cartList.html"   id="cart"><i class="fa-solid fa-cart-shopping"> Cart  <span id="cart-num"></span></i></a>
+                            <span id="wish-num"></span>
+                        </i></a>
+                    <a href="./cartList.html" id="cart"><i class="fa-solid fa-cart-shopping"> Cart <span
+                                id="cart-num"></span></i></a>
                     <i onclick="logout()" class="logout-btn fa-solid fa-right-from-bracket"></i>
-
                 </div>
                 <button class="hamburger-button" onclick="toggleMenu()">
                     &#9776;
                 </button>
-            </div>   
+            </div>
+
         </nav>
         <!-- Menu container to show/hide -->
         <div class="menu-container">
             <ul class="menu-list">
-                <li><a href="#" id="acc">Account</a></li>
+                <li><a href="#" id="acc1">Account</a></li>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="Categories.html">Category</a></li>
                 <li><a href="Products.html">Product</a></li>
@@ -54,24 +54,64 @@
                 <li><a href="">Cart</a></li>
                 <li>
                     <a href="wishlist.html" id="wish"><i class="fa-regular fa-heart"> Wish List
-                        <span id="wish-num-mob"></span>
-                    </i></a>
+                            <span id="wish-num-mob"></span>
+                        </i></a>
                 </li>
-                <li><a href="./cartList.html"   id="cart"><i class="fa-solid fa-cart-shopping"> Cart  <span id="cart-num-mob"></span></i></a></li>
-                <li onclick="logout()"><i  class="logout-btn fa-solid fa-right-from-bracket"></i></li>
-
+                <li><a href="./cartList.html" id="cart"><i class="fa-solid fa-cart-shopping"> Cart <span
+                                id="cart-num-mob"></span></i></a></li>
+                <li onclick="logout()"><i class="logout-btn fa-solid fa-right-from-bracket"></i></li>
             </ul>
         </div>
     </header>
-    <!-- header -->
     <div class="product-banner">
         <h1>Our <span>Products</span></h1>
+    </div><br><br>
+    <div id="search-container">
+        <input oninput="search()" type=" search" id="search-input" placeholder="Search product name here." />
+        <!-- <button id="search" onclick="search()">Search</button> -->
+    </div>
+    <div class="filter">
+        <div id="buttons">
+            <button class="button-value" onclick="filterProduct('All')">All</button>
+            <button class="button-value" onclick="filterProduct('Clothes')">clothes</button>
+            <button class="button-value" onclick="filterProduct('Books')">Books</button>
+            <button class="button-value" onclick="filterProduct('Shoes')">Shoes</button>
+            <button class="button-value" onclick="filterProduct('Electronics')">Electronics</button>
+            <button class="button-value" onclick="filterProduct('Furniture')">Furniture</button>
+            <button class="button-value" onclick="filterProduct('Games')">Games</button>
+        </div>
+        <select id="sort-by" onchange="sortProducts()">Sort by
+            <option>Sort by</option>
+            <option value="default">Default</option>
+            <option value="priceAsc">Price: Low to High</option>
+            <option value="priceDesc">Price: High to Low</option>
+            <option value="ratingDesc">Rating: High to Low</option>
+            <option value="ratingAsc">Rating: Low to High</option>
+            <option value="nameAsc">Name: A to Z</option>
+            <option value="nameDesc">Name: Z to A</option>
+        </select>
+    </div>
+    <div id="price-filter">
+        <div>
+            <label for="min-price">Min Price:</label>
+            <input type="number" id="min-price" min="0" step="0.01">
+        </div>
+        <div>
+            <label for="max-price">Max Price:</label>
+            <input type="number" id="max-price" min="0" step="0.01">
+        </div>
+        <button class="apply-button" onclick="applyFilters()">Apply</button>
     </div>
     <div class="container">
         <section class="product-cards" id="product-cards">
         </section>
+        <div class="moreButton"><button id="more-button" onclick="more()">More</button>
+        </div>
     </div>
 
+    <div id="scrollToTopBtn" class="scroll-to-top-btn">
+        <span>&#8593;</span>
+    </div>
     <footer class="footer">
         <div class="container">
             <p>Our Social</p>
@@ -84,8 +124,11 @@
             <p class="copyright">&copy; 2024 <span>Name</span> All Right Reserved</p>
         </div>
     </footer>
+    <!-- <script  type="module"  src="../JS/wish.js"></script> -->
     <script type="module" src="../JS/script.js"></script>
     <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
 </html>
