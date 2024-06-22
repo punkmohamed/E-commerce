@@ -233,7 +233,12 @@ function displayProduct(products) {
       });
 
       displayedProducts += productList; // Concatenate new products to existing displayedProducts
-      document.getElementById("product-cards").innerHTML = displayedProducts;
+      try {
+        document.getElementById("product-cards").innerHTML = displayedProducts;
+
+      } catch (error) {
+        
+      }
       addHeart();
     }
 
@@ -273,7 +278,7 @@ function more() {
 function filterProduct(category) {
   localStorage.setItem("selectedCategoryId", category);
   const buttons = document.querySelectorAll(".button-value");
-  if (window.location.pathname.endsWith("Products.html")) {
+  if (window.location.pathname.endsWith("./Products.html")) {
     const currentPageURL = new URL(window.location.href);
     currentPageURL.searchParams.set("Filter By ", category);
     history.replaceState({}, "", currentPageURL);
