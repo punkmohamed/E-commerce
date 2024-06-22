@@ -40,6 +40,11 @@ nav .nav-container {
   font-size: 22px;
   font-weight: bold;
   margin-right: 43px;
+  display: flex;
+  align-items: center;
+}
+.logo svg{
+  width: 30px;
 }
 
 .links {
