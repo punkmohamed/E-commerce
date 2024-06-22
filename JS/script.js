@@ -278,8 +278,9 @@ function more() {
 function filterProduct(category) {
   localStorage.setItem("selectedCategoryId", category);
   const buttons = document.querySelectorAll(".button-value");
-  if (window.location.pathname.endsWith("./Products.html")) {
+  if (window.location.pathname.endsWith("Products.html")) {
     const currentPageURL = new URL(window.location.href);
+    console.log(currentPageURL);
     currentPageURL.searchParams.set("Filter By ", category);
     history.replaceState({}, "", currentPageURL);
   }
@@ -471,7 +472,9 @@ function displayCategories(storedCategories) {
 // Function  category click
 function CategoryfilterProduct(categoryId) {
   localStorage.setItem("selectedCategoryId", categoryId);
-  window.location.href = "/Pages/Products.html";
+  window.location.href.replace('Categories.html',"Products.html");
+
+  
 }
 
 window.CategoryfilterProduct = CategoryfilterProduct;
