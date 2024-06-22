@@ -39,10 +39,12 @@ if(sessionStorage.getItem('user-creds')!=null)
   }
 
   let{displayName,uid}=user
-  
+
+ setTimeout(()=>{
   document.getElementById("acc1").innerHTML = JSON.parse(
     sessionStorage.getItem("user-creds")
   ).displayName;
+ },1000)
   //toglemenu
 function toggleMenu() {
   var menuContainer = document.querySelector(".menu-container");
