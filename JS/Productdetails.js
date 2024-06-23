@@ -28,23 +28,21 @@ const app = initializeApp(firebaseConfig);
 let db = getDatabase();
 
 let user;
-if(sessionStorage.getItem('user-creds')!=null)
-  {
-      user=JSON.parse(sessionStorage.getItem('user-creds'))
-      document.getElementById('acc').innerHTML=user.displayName
+if (sessionStorage.getItem("user-creds") != null) {
+  user = JSON.parse(sessionStorage.getItem("user-creds"));
+  document.getElementById("acc").innerHTML = user.displayName;
+} else {
+  user = null;
+  // window.location.href="../index.html"
+}
 
-  }else{
-      user=null
-      // window.location.href="../index.html"
-  }
-
-  let{displayName,uid}=user
-console.log('dispy',displayName)
-console.log('dispy',user)
- setTimeout(()=>{
-  document.getElementById("acc1").innerText =displayName;
- },1000)
-  //toglemenu
+let { displayName, uid } = user;
+console.log("dispy", displayName);
+console.log("dispy", user);
+setTimeout(() => {
+  document.getElementById("acc1").innerText = displayName;
+}, 1000);
+//toglemenu
 function toggleMenu() {
   var menuContainer = document.querySelector(".menu-container");
   menuContainer.classList.toggle("open");
@@ -61,6 +59,14 @@ function getProduct() {
   let dbref = ref(db);
   get(child(dbref, "/products/" + productKey)).then((e) => {
     storedProduct = e.val();
+    if (window.location.pathname.endsWith("productDetails.html")) {
+      const currentPageURL = new URL(window.location.href);
+      currentPageURL.searchParams.set(
+        storedProduct.category,
+        storedProduct.productName
+      );
+      history.replaceState({}, "i8yi8y8y8", currentPageURL);
+    }
     console.log("storedProduct", storedProduct);
     console.log("storedProducts", storedProduct.category);
     let addeditem = document.querySelector(".addeditem");
@@ -79,11 +85,11 @@ function getProduct() {
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
-                <span>( 150 )</span>
+                <span>${storedProduct.rating}</span>
                 <br>
                 <br>
                 <hr>
-                <h2>Price : ${storedProduct.price} $</h2>
+                <h2>Price : <span style='color:green;'>${storedProduct.price}$</span> </h2>
                 <p>We have many different payment methods</p>
                 <hr>
                 <div id="details-btn">
@@ -111,57 +117,56 @@ let wishProduct;
 let wish;
 
 function getWishList() {
-  let dbref = ref(db)
- return get(child(dbref, '/wishList')).then((snapshot) => {
-      let wish = snapshot.val()      
-      // console.log(wish);
+  let dbref = ref(db);
+  return get(child(dbref, "/wishList")).then((snapshot) => {
+    let wish = snapshot.val();
+    // console.log(wish);
     //   displayWish(wish)
-      getWishData(wish)
-      return wish
-  })
+    getWishData(wish);
+    return wish;
+  });
 }
 
-getWishList()
-let allWishItems=[]
+getWishList();
+let allWishItems = [];
 
-function getWishData(listItems){
-
-    Object.keys(listItems).forEach((key) => {
-        if(key==uid){
-            const wishItem = listItems[key];
-          //   console.log('s',wishItem);
-            allWishItems=[...wishItem.products]
-            document.getElementById('wish-num').innerText=allWishItems.length-1
-            document.getElementById('wish-num-mob').innerText=allWishItems.length-1
-        }
-    })
-
+function getWishData(listItems) {
+  Object.keys(listItems).forEach((key) => {
+    if (key == uid) {
+      const wishItem = listItems[key];
+      //   console.log('s',wishItem);
+      allWishItems = [...wishItem.products];
+      document.getElementById("wish-num").innerText = allWishItems.length - 1;
+      document.getElementById("wish-num-mob").innerText =
+        allWishItems.length - 1;
+    }
+  });
 }
 
-let allCardProduct=[];
+let allCardProduct = [];
 function getCartList() {
-    let dbref = ref(db)
-   return get(child(dbref, '/cartList')).then((snapshot) => {
-        let Cart = snapshot.val()      
-        // console.log(Cart);
-        getcartData(Cart)
-        return Cart
-    })
+  let dbref = ref(db);
+  return get(child(dbref, "/cartList")).then((snapshot) => {
+    let Cart = snapshot.val();
+    // console.log(Cart);
+    getcartData(Cart);
+    return Cart;
+  });
 }
-getCartList()
+getCartList();
 
-function getcartData(listItems){
-
-    Object.keys(listItems).forEach((key) => {
-        if(key==uid){
-            const cartItem = listItems[key];
-            // console.log('s',cartItem);
-            allCardProduct=[...cartItem.products]
-            // console.log('allCardProduct',allCardProduct)
-            document.getElementById('cart-num').innerText=allCardProduct.length-1
-            document.getElementById('cart-num-mob').innerText=allCardProduct.length-1
-        }
-    })
+function getcartData(listItems) {
+  Object.keys(listItems).forEach((key) => {
+    if (key == uid) {
+      const cartItem = listItems[key];
+      // console.log('s',cartItem);
+      allCardProduct = [...cartItem.products];
+      // console.log('allCardProduct',allCardProduct)
+      document.getElementById("cart-num").innerText = allCardProduct.length - 1;
+      document.getElementById("cart-num-mob").innerText =
+        allCardProduct.length - 1;
+    }
+  });
 }
 
 async function addToWish(key) {
@@ -171,9 +176,8 @@ async function addToWish(key) {
   getCartProducts("Added to wish Successfully");
   let wishProducts = products != [""] ? allWishProduct : [];
   let total = totalPrice ? totalPrice : 0;
-  wishProducts.push(storedProduct)
-  console.log(storedProduct)
-  
+  wishProducts.push(storedProduct);
+  console.log(storedProduct);
 
   if (wish == null) {
     set(ref(db, "wishList/" + uid), {
@@ -193,12 +197,10 @@ async function addToWish(key) {
   }
   getWishProducts();
   addNotify("Added To Wish Successfully");
-
 }
 window.addToWish = addToWish;
 
 async function addToCart(key) {
-
   let { count, products, totalPrice } = cartProduct;
   let cartProducts = products != [""] ? allCartProduct : [];
   let total = totalPrice ? totalPrice : 0;
@@ -219,10 +221,9 @@ async function addToCart(key) {
       totalPrice: total,
       uid,
     });
-    getCartList()
+    getCartList();
   }
   addNotify("Added To Cart Successfully");
-
 }
 window.addToCart = addToCart;
 
@@ -242,12 +243,12 @@ async function getWishProducts() {
       document.getElementById("wish-num").innerText = allWishProduct.length - 1;
       document.getElementById("wish-num-mob").innerText =
         allWishProduct.length - 1;
-        try {
-          
-          window.localStorage.setItem("wishNumber", `${allWishProduct.length - 1}`);
-        } catch (error) {
-          
-        }
+      try {
+        window.localStorage.setItem(
+          "wishNumber",
+          `${allWishProduct.length - 1}`
+        );
+      } catch (error) {}
       return;
     }
   });
@@ -275,12 +276,9 @@ async function getCartProducts() {
       document.getElementById("cart-num").innerText = allCartProduct.length - 1;
       document.getElementById("cart-num-mob").innerText =
         allCartProduct.length - 1;
-        try {
-          
-          localStorage.setItem("cartNumber", allCartProduct.length - 1);
-        } catch (error) {
-          
-        }
+      try {
+        localStorage.setItem("cartNumber", allCartProduct.length - 1);
+      } catch (error) {}
       return;
     }
   });
@@ -304,7 +302,7 @@ function addNotify(message) {
     position: "left", // `left`, `center` or `right`
     stopOnFocus: true,
     offset: {
-      y: 70, 
+      y: 70,
     },
     style: {
       background: "linear-gradient(to right, #00b09b, #96c93d)",

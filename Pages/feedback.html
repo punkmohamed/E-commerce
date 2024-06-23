@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Css/Register.css" >
+    <link rel="stylesheet" href="../Css/feedback.css" >
+    <link rel="stylesheet" href="../Css/all.min.css">
+    <link rel="stylesheet" href="../Css/style.css">
+</head>
+<body>
+ 
+    <header>
+        <nav >
+            <div class="nav-container">
+                <div class="logo">
+                    <?xml version="1.0" ?><svg viewBox="0 0 129.88 129.88" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style>.cls-1{fill:url(#linear-gradient);}.cls-2,.cls-3{fill:none;stroke-linejoin:round;stroke-width:4.6px;}.cls-2,.cls-3,.cls-4{stroke:#fff;}.cls-3{stroke-linecap:round;}.cls-4{stroke-miterlimit:10;stroke-width:4px;fill:url(#linear-gradient-2);}</style><linearGradient gradientUnits="userSpaceOnUse" id="linear-gradient" x1="21.08" x2="108.88" y1="90.47" y2="39.78"><stop offset="0.02" stop-color="red"/><stop offset="1" stop-color="#9e005d"/></linearGradient><linearGradient id="linear-gradient-2" x1="46.14" x2="88.56" xlink:href="#linear-gradient" y1="57.75" y2="57.75"/></defs><title/><g data-name="Layer 1" id="Layer_1"><path class="cls-1" d="M86.37,14.44H43.59a13.65,13.65,0,0,0-11.82,6.82L10.38,58.31a13.67,13.67,0,0,0,0,13.64L31.77,109a13.65,13.65,0,0,0,11.82,6.82H86.37A13.63,13.63,0,0,0,98.18,109l21.4-37a13.67,13.67,0,0,0,0-13.64l-21.4-37A13.63,13.63,0,0,0,86.37,14.44Z"/><path class="cls-2" d="M62.32,91.8a5.08,5.08,0,1,1-5.08-5.08A5.08,5.08,0,0,1,62.32,91.8Z"/><path class="cls-2" d="M82.53,91.8a5.08,5.08,0,1,1-5.08-5.08A5.08,5.08,0,0,1,82.53,91.8Z"/><polyline class="cls-3" points="34.12 40.87 44.55 40.87 52.15 75.69 48.62 80.81 87.92 80.81"/><polygon class="cls-4" points="88.56 68.62 51.62 71.62 46.14 43.87 88.56 43.87 88.56 68.62"/><line class="cls-3" x1="55.59" x2="80.24" y1="51.36" y2="51.36"/></g></svg>
+                    SwiftCart
+                </div>
+                <div class="navbar">
+                    <ul class="links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="Categories.html">Category</a></li>
+                        <li><a href="Products.html">Product</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="account-cart">
+                    <a><i class="fa-regular fa-user" id="acc"> Account</i></a>
+                    <a href="wishlist.html" id="wish"><i class="fa-regular fa-heart"> 
+                        <span id="wish-num"></span>
+                    </i></a>
+                    <a href="./cartList.html"   id="cart"><i class="fa-solid fa-cart-shopping">  <span id="cart-num"></span></i></a>
+                    <i onclick="logout()" class="logout-btn fa-solid fa-right-from-bracket"></i>
+                </div>
+                <button class="hamburger-button" onclick="toggleMenu()">
+                    &#9776;
+                </button>
+            </div>
+        
+        </nav>
+        <!-- Menu container to show/hide -->
+        <div class="menu-container">
+            <ul class="menu-list">
+                <li><a href="#" id="acc1">Account</a></li>
+                 <li><a href="home.html">Home</a></li>
+                <li><a href="Categories.html">Category</a></li>
+                <li><a href="Products.html">Product</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="">Cart</a></li>
+                <li>
+                    <a href="wishlist.html" id="wish"><i class="fa-regular fa-heart"> Wish List
+                        <span id="wish-num-mob"></span>
+                    </i></a>
+                </li>
+                <li><a href="./cartList.html"   id="cart"><i class="fa-solid fa-cart-shopping"> Cart  <span id="cart-num-mob"></span></i></a></li>
+                <li onclick="logout()"><i  class="logout-btn fa-solid fa-right-from-bracket"></i></li>
+            </ul>
+        </div>
+    </header>
+    
+    <div class="container-feed ">
+        <form id="feedback-form">
+            <h2>Feedback Form</h2>
+            <div class="form-group">
+                <label for="feedback">Your Feedback:</label>
+                <textarea id="feedback" name="feedback" rows="4" required></textarea>
+            </div>
+            <div class="form-buttons">
+                <a href="./home.html" id="skip" class="btn skip">Skip</a>
+                <button onclick="SendFeedBack()" type="button" id="send" class="btn send">Send</button>
+            </div>
+        </form>
+    </div>
+
+
+        <!-- ^Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>Our Social</p>
+                <div class="social-icons">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fas fa-home"></i>
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <p class="copyright">&copy; 2024 <span>Name</span> All Right Reserved</p>
+            </div>
+        </footer>
+    <!-- <script type="module" src="./firebase/rigster.js"></script> -->
+    <script type="module" src="../js/feedback.js"></script>
+    <!-- <script  src="./firebase/reg.js"></script> -->
+</body>
+</html>

@@ -35,10 +35,10 @@
                 </div>
                 <div class="account-cart">
                     <a><i class="fa-regular fa-user" id="acc"> Account</i></a>
-                    <a href="wishlist.html" id="wish"><i class="fa-regular fa-heart"> Wish List
+                    <a href="wishlist.html" id="wish"><i class="fa-regular fa-heart">
                             <span id="wish-num"></span>
                         </i></a>
-                    <a href="./cartList.html" id="cart"><i class="fa-solid fa-cart-shopping"> Cart <span
+                    <a href="./cartList.html" id="cart"><i class="fa-solid fa-cart-shopping"> <span
                                 id="cart-num"></span></i></a>
 
                     <i onclick="logout()" class="logout-btn fa-solid fa-right-from-bracket"></i>
@@ -60,11 +60,11 @@
                 <li><a href="Products.html">Product</a></li>
                 <li><a href="about.html">About</a></li>
                 <li>
-                    <a href="wishlist.html" id="wish"><i class="fa-regular fa-heart"> Wish List
+                    <a href="wishlist.html" id="wish"><i class="fa-regular fa-heart"> 
                             <span id="wish-num-mob"></span>
                         </i></a>
                 </li>
-                <li><a href="./cartList.html" id="cart"><i class="fa-solid fa-cart-shopping"> Cart <span
+                <li><a href="./cartList.html" id="cart"><i class="fa-solid fa-cart-shopping">  <span
                                 id="cart-num-mob"></span></i></a></li>
                 <li onclick="logout()"><i class="logout-btn fa-solid fa-right-from-bracket"></i></li>
 
@@ -74,6 +74,13 @@
     <!-- header -->
     <div id="scrollToTopBtn" class="scroll-to-top-btn">
         <span>&#8593;</span>
+    </div>
+    <div class="cart-header">
+        <h2>
+            <?xml version="1.0" ?><svg viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0h24v24H0z" fill="none"/><path d="M6 9h13.938l.5-2H8V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5a1 1 0 0 1-1-1V4H2V2h3a1 1 0 0 1 1 1v6zm0 14a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm12 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></g></svg>
+            Cart Items
+        </h2>
+        <button onclick="deleteAllItem()" id="clear" class="clear-all btn-delete">Clear All Cart</button>
     </div>
     <div class="cart-items" id="cart-items">
         <div class="page-empty">

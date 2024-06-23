@@ -77,7 +77,10 @@ if(sessionStorage.getItem('user-creds')!=null)
      return get(child(dbref, '/cartList')).then((snapshot) => {
           let cart = snapshot.val()      
           console.log(cart);
-        //   displaycart(cart)
+          if(cart<=2){
+            document.getElementById('clear').style.display=none;
+            console.log('sssvvsddsdfdsf')
+       }
           getcartData(cart)
           return cart
       })
@@ -86,7 +89,7 @@ if(sessionStorage.getItem('user-creds')!=null)
 
 
   function getcartData(listItems){
-
+          
         Object.keys(listItems).forEach((key) => {
             if(key==uid){
                 const cartItem = listItems[key];
@@ -104,6 +107,13 @@ if(sessionStorage.getItem('user-creds')!=null)
 
   function displaycart(listItems){
     console.log((listItems));
+    if(listItems.length<2)
+        {
+            document.getElementById("clear").style.display="none"
+        }else{
+            document.getElementById("clear").style.display="block"
+
+        }
     console.log('document.getElementById',document.getElementById('cart-items'));
     let cartList = ``;
     tPrice=0;
@@ -176,6 +186,23 @@ if(sessionStorage.getItem('user-creds')!=null)
   window.deleteItem=deleteItem
   
 
+  console.log('document.getElementById()',document.getElementById('clear-all'))
+//   document.getElementById('clear-all').style.display=none;
+  function deleteAllItem(){
+    if(allItems.length<=2){
+      document.getElementById('cart-items').innerHTML = `  <div class="page-empty">
+          <h2>No cart item Found</h2>
+        </div>`;
+    }
+     allItems.splice(1)
+  update(ref(db,"cartList/"+uid ), {
+      products:  allItems,
+  })
+   displaycart(allItems)
+   document.getElementById('cart-num').innerText=0
+   document.getElementById('cart-num-mob').innerText=0
+}
+window.deleteAllItem= deleteAllItem
 
 
   function makeOrderRequest(){
@@ -252,3 +279,4 @@ function logout(){
     window.location.href='../index.html'
   }
   window.logout = logout;
+

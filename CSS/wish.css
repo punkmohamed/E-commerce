@@ -1,5 +1,5 @@
 .wish-items{
-   margin-top: 50px;
+   margin-top: 5px;
     min-height: 65vh;
     padding: 10px;
   
@@ -71,4 +71,14 @@ color: yellow;
     display:flex ;
     align-items: center;
     justify-content: center;
+}
+
+#cart-btn{
+}
+.cart-header{
+    margin-top: 80px;
+padding-inline: 30px;
+}
+.cart-header h2{
+    margin-bottom: 0;
 }

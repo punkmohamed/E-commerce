@@ -1,0 +1,75 @@
+body {
+
+ height: 80vh;
+  
+}
+
+.container-feed {
+    margin-block: 80px 40px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+   margin: auto;
+   overflow: hidden;
+   margin-top:110px;
+   margin-bottom:110px;
+    
+}
+
+h2 {
+    margin-top: 10px;
+
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-wrap: nowrap;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn.skip {
+    background-color: #ccc;
+    color: #333;
+    margin-right: 10px;
+}
+
+.btn.send {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn.skip:hover {
+    background-color: #bbb;
+}
+
+.btn.send:hover {
+    background-color: #45a049;
+}

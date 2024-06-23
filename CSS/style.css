@@ -98,6 +98,7 @@ translate: org;
 
 .account-cart {
   display: flex;
+  gap: 10px;
   align-items: center;
   flex-wrap: nowrap;
 }
@@ -116,8 +117,13 @@ translate: org;
   color: #333;
   font-weight: 600;
 }
+.account-cart i a{
+  cursor: pointer;
+
+}
 .account-cart i {
   font-size: 15px;
+
 }
 
 .container{
@@ -282,6 +288,7 @@ color: #333;
 }
 
 .banner .banner-info {
+  display: none;
   font-size: 18px;
   position: absolute;
   top: 50%; 
@@ -520,6 +527,7 @@ color: #333;
 }
 .product-cards{
   display: flex;
+  justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
   padding-top: 30px;
