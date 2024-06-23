@@ -450,9 +450,9 @@ function displayCategories(storedCategories) {
                   <img src="${category.image}" alt="">
               </div>
               <div class="cat-info">
-            <a href="/Pages/Products.html" onclick="CategoryfilterProduct('${key}')">
-                            <h1>${category.categoryName}</h1>
-                  </a>
+  <a href="/E-commerce/Pages/Products.html" onclick="CategoryfilterProduct('${key}')">
+              <h1>${category.categoryName}</h1>
+            </a>
                   <p>Quantity: ${category.productsCount}</p>
               </div>
               </div>
