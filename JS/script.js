@@ -466,7 +466,7 @@ function displayCategories(storedCategories) {
 // Function  category click
 function CategoryfilterProduct(categoryId) {
   localStorage.setItem("selectedCategoryId", categoryId);
-  window.location.href.replace("Categories.html", "Products.html");
+  window.location.href = window.location.href.replace("Categories.html", "Products.html");
 }
 
 window.CategoryfilterProduct = CategoryfilterProduct;
