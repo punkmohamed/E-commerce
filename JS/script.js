@@ -450,9 +450,9 @@ function displayCategories(storedCategories) {
                   <img src="${category.image}" alt="">
               </div>
               <div class="cat-info">
-  <a href="/E-commerce/Pages/Products.html" onclick="CategoryfilterProduct('${key}')">
-              <h1>${category.categoryName}</h1>
-            </a>
+            <a href="/Pages/Products.html" onclick="CategoryfilterProduct('${key}')">
+                            <h1>${category.categoryName}</h1>
+                  </a>
                   <p>Quantity: ${category.productsCount}</p>
               </div>
               </div>
@@ -466,7 +466,9 @@ function displayCategories(storedCategories) {
 // Function  category click
 function CategoryfilterProduct(categoryId) {
   localStorage.setItem("selectedCategoryId", categoryId);
-  window.location.href = window.location.href.replace("Categories.html", "Products.html");
+  const currentURL = window.location.href;
+  const newURL = currentURL.replace("Categories.html", "Products.html");
+  window.location.href = newURL;
 }
 
 window.CategoryfilterProduct = CategoryfilterProduct;
