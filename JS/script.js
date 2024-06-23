@@ -450,7 +450,7 @@ function displayCategories(storedCategories) {
                   <img src="${category.image}" alt="">
               </div>
               <div class="cat-info">
-            <a href="/Pages/Products.html" >
+            <a href="/Pages/Products.html" onclick="CategoryfilterProduct('${key}')">
                             <h1>${category.categoryName}</h1>
                   </a>
                   <p>Quantity: ${category.productsCount}</p>
@@ -458,16 +458,16 @@ function displayCategories(storedCategories) {
               </div>
           `;
     });
-    windowlocalStorage.setItem("selectedCategoryId", category);
     try {
       document.getElementById("categoires").innerHTML = categoriesList;
     } catch (error) {}
   }
 }
 // Function  category click
-// function CategoryfilterProduct(categoryId) {
-//   windowlocalStorage.setItem("selectedCategoryId", categoryId);
-// }
+function CategoryfilterProduct(categoryId) {
+  localStorage.setItem("selectedCategoryId", categoryId);
+  window.location.href.replace("Categories.html", "Products.html");
+}
 
 window.CategoryfilterProduct = CategoryfilterProduct;
 getCategories();
