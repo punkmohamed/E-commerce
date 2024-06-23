@@ -450,7 +450,7 @@ function displayCategories(storedCategories) {
                   <img src="${category.image}" alt="">
               </div>
               <div class="cat-info">
-            <a href="javascript:void(0);" onclick="CategoryfilterProduct('${key}')">
+           <a href="javascript:void(0);" onclick="CategoryfilterProduct('${key}')">
                             <h1>${category.categoryName}</h1>
                   </a>
                   <p>Quantity: ${category.productsCount}</p>
@@ -463,12 +463,17 @@ function displayCategories(storedCategories) {
     } catch (error) {}
   }
 }
-// Function  category click
+// Get the base URL dynamically
+function getBaseURL() {
+  const url = window.location.href;
+  const baseURL = url.substring(0, url.lastIndexOf("/"));
+  return baseURL;
+}
+
 function CategoryfilterProduct(categoryId) {
   localStorage.setItem("selectedCategoryId", categoryId);
-  const currentURL = window.location.href;
-  const newURL = currentURL.replace("Categories.html", "Products.html");
-  window.location.href = newURL;
+  const baseURL = getBaseURL();
+  window.location.href = `${baseURL}/Products.html`;
 }
 
 window.CategoryfilterProduct = CategoryfilterProduct;
