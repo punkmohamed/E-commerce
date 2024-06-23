@@ -465,8 +465,8 @@ function displayCategories(storedCategories) {
 }
 // Function  category click
 function CategoryfilterProduct(categoryId) {
-  localStorage.setItem("selectedCategoryId", categoryId);
-  window.location.href.replace("Categories.html", "Products.html");
+  window.localStorage.setItem("selectedCategoryId", categoryId);
+  window.location.href = "./Products.html";
 }
 
 window.CategoryfilterProduct = CategoryfilterProduct;
